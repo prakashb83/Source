@@ -51,7 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
 <PackageAsSingleFile>true</PackageAsSingleFile>
     <DeployIisAppPath>Default Web Site/NerDinner</DeployIisAppPath>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+  
     <DeployOnBuild>True</DeployOnBuild>
     <UseMsDeploy>True</UseMsDeploy>
     <DeployTarget>MsDeployPublish</DeployTarget>
