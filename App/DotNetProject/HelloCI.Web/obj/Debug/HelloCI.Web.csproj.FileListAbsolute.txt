@@ -1,0 +1,11 @@
+D:\Bala\IntegratedAgileBase\xtrumanx-helloci-demo-app-b009609ada2e\xtrumanx-helloci-demo-app-b009609ada2e\HelloCI.Web\bin\HelloCI.Web.dll.config
+D:\Bala\IntegratedAgileBase\xtrumanx-helloci-demo-app-b009609ada2e\xtrumanx-helloci-demo-app-b009609ada2e\HelloCI.Web\bin\HelloCI.Web.dll
+D:\Bala\IntegratedAgileBase\xtrumanx-helloci-demo-app-b009609ada2e\xtrumanx-helloci-demo-app-b009609ada2e\HelloCI.Web\bin\HelloCI.Web.pdb
+D:\Bala\IntegratedAgileBase\xtrumanx-helloci-demo-app-b009609ada2e\xtrumanx-helloci-demo-app-b009609ada2e\HelloCI.Web\obj\Debug\HelloCI.Web.dll
+D:\Bala\IntegratedAgileBase\xtrumanx-helloci-demo-app-b009609ada2e\xtrumanx-helloci-demo-app-b009609ada2e\HelloCI.Web\obj\Debug\HelloCI.Web.pdb
+D:\SVN_Source\DotNetProject\HelloCI.Web\bin\HelloCI.Web.dll
+D:\SVN_Source\DotNetProject\HelloCI.Web\bin\HelloCI.Web.pdb
+D:\SVN_Source\DotNetProject\HelloCI.Web\obj\Debug\HelloCI.Web.csprojResolveAssemblyReference.cache
+D:\SVN_Source\DotNetProject\HelloCI.Web\obj\Debug\HelloCI.Web.dll
+D:\SVN_Source\DotNetProject\HelloCI.Web\obj\Debug\HelloCI.Web.pdb
+D:\SVN_Source\DotNetProject\HelloCI.Web\bin\HelloCI.Web.dll.config
