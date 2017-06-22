@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Demo1 with Customer Details</title>
+<title>Demo on 22nd Jun with Customer Details</title>
 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/cust_css/main.css">
 <link rel="stylesheet" type="text/css" href="header.css" media="all" />
