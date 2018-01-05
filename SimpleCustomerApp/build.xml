@@ -181,7 +181,7 @@
             <property name="report.temp.dir" location="${reports.dir}/temp" />
             <property name="instrumented.dir" value="${reports.dir}/instrumented" />
             <property name="report.cobertura.dir" location="${reports.dir}/BuildsCodeCoverage" />
-            <!--<property name="coverage.xml.dir" value="${report.cobertura.dir}/cobertura-xml" />-->
+            <property name="coverage.xml.dir" value="${report.cobertura.dir}/cobertura-xml" />
             <property name="coverage.html.dir" value="${report.cobertura.dir}" />
             <!-- findbugs properties -->
             <property name="findbugs.home.dir" value="C:/Jenkins/Utilities/JenkinsPlugin/findbugs/findbugs-3.0.1/" />
@@ -370,7 +370,7 @@
             	<echo>Reached report cobertura</echo>
               <delete dir="${report.cobertura.dir}" />
               <mkdir dir="${report.cobertura.dir}" />
-              <!--<mkdir dir="${coverage.xml.dir}" />-->
+              <mkdir dir="${coverage.xml.dir}" />
               <mkdir dir="${coverage.html.dir}" />
               <cobertura-report format="html" datafile="${cobertura.ser.file}" destdir="${coverage.html.dir}">
                 <fileset dir="${src.dir}">
@@ -379,12 +379,12 @@
                   <exclude name="**/*Test.java" />
                 </fileset>
               </cobertura-report>
-              <!--<cobertura-report format="xml" datafile="${cobertura.ser.file}" destdir="${coverage.xml.dir}">
-  <fileset dir="${src.dir}">
-        <include name="**/*.java" />
-        <exclude name="**/*Test*.java" />
-     </fileset>  
-</cobertura-report>-->
+              <cobertura-report format="xml" datafile="${cobertura.ser.file}" destdir="${coverage.xml.dir}">
+		  <fileset dir="${src.dir}">
+			<include name="**/*.java" />
+			<exclude name="**/*Test*.java" />
+		  </fileset>  
+	      </cobertura-report>
             </target>
 
             <!-- test Target -->
