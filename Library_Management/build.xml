@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="getjar" name="Library_Management">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="C:/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <property name="jar.dir" value="build/jar"/>
+    <property name="war.dir" value="build/war"/>
+    <property name="zip.dir" value="build/zip"/>
+    <property name="web.dir" value="WebContent"/>
+    <property name="lib.dir" value="${web.dir}/WEB-INF/lib"/> 
+    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="JUnit 4.libraryclasspath">
+    <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+    <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>       
+      	<path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/annotations-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/catalina-ant.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/catalina-ha.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/catalina-storeconfig.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/catalina-tribes.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/catalina.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/ecj-4.6.3.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/el-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/jasper-el.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/jasper.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/jaspic-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/jsp-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/servlet-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-api.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-coyote.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-dbcp.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-jdbc.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-jni.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-util-scan.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-util.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/tomcat-websocket.jar"/>
+        <pathelement location="C:/apache-tomcat-7.0.70/lib/websocket-api.jar"/>
+    </path>
+    <path id="Library_Management.classpath">
+         <pathelement location="build/classes"/>
+    	 <pathelement path="c:\junit\junit-4.12.jar" />
+         <pathelement path="c:\junit\hamcrest-all-1.3.jar" />
+    	 <path refid="Web App Libraries.libraryclasspath"/>
+    	 <path refid="EAR Libraries.libraryclasspath"/>
+    	 <path refid="JUnit 4.libraryclasspath"/>
+    	<path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
+    </path>
+    <target name="getwar" depends="build">
+      	    <war destfile="${war.dir}\Library_Management.war"
+  	    	webxml = "${web.dir}\WEB-INF\web.xml">    
+  	        <fileset dir = "${web.dir}">
+  	        <include name = "**/*.*"/>
+  	        </fileset>
+             <lib dir = "WebContent/WEB-INF/lib">
+                <include name = "**/*.jar"/>
+             </lib>
+             <classes dir = "build/classes"/>
+            </war>
+   </target>
+              	
+              	
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete>
+    	<fileset dir="${build.dir}">
+	        <include name="**/*.class"/>
+	      </fileset>
+	      <fileset dir="${jar.dir}" includes="**/*.jar" />
+	      <fileset dir="${war.dir}" includes="**/*.war" />
+	      <fileset dir="${zip.dir}" includes="**/*.zip" />
+	    </delete>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Library_Management.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Testing">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Library_Management.classpath"/>
+        </junit>
+    </target>
+              	<target name="AllTests">
+              	      	        <mkdir dir="${junit.output.dir}"/>
+              	      	        <junit fork="yes" printsummary="withOutAndErr">
+              	  	            <formatter type="xml"/>
+              	      	        	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
+              	          	            <classpath refid="Library_Management.classpath"/>
+              	      	        </junit>
+              	          	    </target>
+    <target name="Library_Management">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+        	<test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}"/>
+        	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
+            <classpath refid="Library_Management.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+               <target name="zipwar" depends="getwar">
+              	<zip destfile="${zip.dir}/Library_Management.zip"
+              	   basedir="${war.dir}"
+              	   includes="**/*.war">
+              	  </zip>
+               </target>
+              	<target name="getjar" depends="build">
+              	 <jar destfile="${jar.dir}\Library_Management.jar">    
+              	   <fileset dir = "${web.dir}">
+              	    <include name = "**/*.*"/>
+              	   </fileset>
+              	 </jar>
+                </target> 
+              <target name="compile-test" depends="zipwar">
+              	                  <mkdir dir="${test.dir}"/>
+              	                  <javac srcdir="${test.dir}" destdir="${test.dir}" debug="true" includes="${src.dir}" includeAntRuntime="false">
+              	                         <classpath refid="master-classpath"/> 
+              	                         <classpath refid="classpath.src"/>
+              	                         <classpath refid="classpath.junittest"/>
+              			                 <classpath refid="class.path.cobertura" />
+              	                         <include name="**/*.java"/>
+              	                  </javac>
+              	                </target>
+</project>
