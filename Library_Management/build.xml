@@ -108,7 +108,7 @@
                     	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
                         <classpath refid="Library_Management.classpath"/>
                     </junit>
-                    <junitreport todir="${test.htmlreports.dir}">
+                    <junitreport todir="${.htmlreports.dir}">
                     <fileset dir="${test.data.dir}">
                       <include name="TEST-*.xml"/>
                     </fileset>
@@ -208,13 +208,12 @@
               	   </fileset>
               	 </jar>
                 </target> 
-              <target name="compile-test" depends="zipwar">
+              <target name="compile-test">
               	                  <mkdir dir="${test.dir}"/>
               	                  <javac srcdir="${test.dir}" destdir="${test.dir}" debug="true" includes="${src.dir}" includeAntRuntime="false">
               	                         <classpath refid="master-classpath"/> 
               	                         <classpath refid="classpath.src"/>
               	                         <classpath refid="classpath.junittest"/>
-              			                 <classpath refid="class.path.cobertura" />
               	                         <include name="**/*.java"/>
               	                  </javac>
               	                </target>
