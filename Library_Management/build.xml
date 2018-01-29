@@ -131,7 +131,7 @@
               	          	            <classpath refid="Library_Management.classpath"/>
               	      	        </junit>
               	          	    </target>
-    <target name="Library_Management">
+    <target name="test">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
@@ -154,7 +154,7 @@
               	   includes="**/*.war">
               	  </zip>
                </target>
-              	<target name="getjar" depends="build">
+              	<target name="getjar" depends="zipwar">
               	 <jar destfile="${jar.dir}\Library_Management.jar">    
               	   <fileset dir = "${web.dir}">
               	    <include name = "**/*.*"/>
