@@ -108,12 +108,7 @@
                     	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
                         <classpath refid="Library_Management.classpath"/>
                     </junit>
-                    <junitreport todir="${test.htmlreports.dir}">
-                    <fileset dir="${test.data.dir}">
-                      <include name="TEST-*.xml"/>
-                    </fileset>
-                    <report format="frames" todir="${.htmlreports.dir}"/>
-                  </junitreport>
+                    
                 </target>
                 <target name="junit" depends="compile-test">
                     <mkdir dir="${test.htmlreports.dir}"/>
@@ -127,6 +122,12 @@
                       <classpath refid="classpath.junittest" />
                       <classpath refid="classpath.hamcrest" />
                     </junit>
+                	<junitreport todir="${test.htmlreports.dir}">
+                	                    <fileset dir="${test.data.dir}">
+                	                      <include name="TEST-*.xml"/>
+                	                    </fileset>
+                	                    <report format="frames" todir="${test.htmlreports.dir}"/>
+                	                  </junitreport>
                 </target>
               	
     <target name="init">
