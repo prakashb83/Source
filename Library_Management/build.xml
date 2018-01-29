@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="test" name="Library_Management">
+              as the first entry and export the buildfile again. --><project basedir="." default="getjar" name="Library_Management">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="C:/eclipse/"/>
     <property name="junit.output.dir" value="junit"/>
@@ -107,25 +107,14 @@
                     	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
                         <classpath refid="Library_Management.classpath"/>
                     </junit>
-                </target>
-                <target name="junit" depends="compile-test">
-                  <mkdir dir="${test.htmlreports.dir}"/>
-                  <mkdir dir="${test.data.dir}"/>
-                  <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
-                    <test name="${junit.class.name}" todir="${test.data.dir}"/>
-                    <formatter type="brief" usefile="false"/>
-                    <formatter type="xml"/>
-                    <classpath refid="master-classpath" />
-                    <classpath refid="classpath.src" />
-                    <classpath refid="classpath.junittest" />
-                    <classpath refid="classpath.hamcrest" />
-                  </junit>
-                  <junitreport todir="${test.htmlreports.dir}">
+                    <junitreport todir="${test.htmlreports.dir}">
                     <fileset dir="${test.data.dir}">
                       <include name="TEST-*.xml"/>
                     </fileset>
                     <report format="frames" todir="${test.htmlreports.dir}"/>
                   </junitreport>
+                </target>
+                <target name="junit" depends="compile-test">
                 </target>
               	
     <target name="init">
@@ -137,7 +126,7 @@
             </fileset>
         </copy>
     </target>
-    <target name="clean">
+    <target name="clean" depends="init">
         <delete>
     	<fileset dir="${build.dir}">
 	        <include name="**/*.class"/>
@@ -150,7 +139,7 @@
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
+    <target depends="clean" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
