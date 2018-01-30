@@ -55,9 +55,9 @@ public class TicketData {
 	{
 		return password;
 	}
-	public static int LoginNameComparision(String name1)
+	public static int LoginNameComparision(String name2)
 	{
-		if(name.equals(name1))
+		if(name.equals(name2))
 				return 1;
 		else
 				return 0;
