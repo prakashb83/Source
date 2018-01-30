@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign up</title>
+
+
+<link rel="stylesheet" href="sign-up.css">
+</head>
+<body  bgclor="#C3CDE6">
+
+ <p id="demo"></p><br><br>
+ <center>
+<h1>MOVIE PUFF</h1>
+<h1 >Login Form</h2>
+
+  
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="password" required>
+        
+    <button type="submit" onclick="UserValidation()">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+  
+</center>
+  <script type="text/javascript">
+ var employees = [];
+  employees.push({name:'Yashwant',password:'*123'}); 
+  employees.push({name:'Mahesh',password:'987@'});
+  employees.push({name:'Udhaya',password:'red'});
+  employees.push({name:'Sandhya',password:'sure'});
+  employees.push({name:'Dharani',password:'choc'});
+var c=0;
+  function UserValidation()
+  {
+	  var uname=document.getElementById('username').value;
+	  	  var pass=document.getElementById('password').value;
+	  for(i=0;i<employees.length;i++)
+   {
+    if(!(uname.localeCompare(employees[i].name)))
+	  	{
+	  if(!(pass.localeCompare(employees[i].password))){
+				  c++;
+		  window.location.assign("Movies-list.jsp");
+	      }
+	  	}
+  
+  	}
+  if(c==0)
+	  {
+	  document.getElementById("demo").innerHTML ="Sorry!!!!!!\nPlease enter a valid username /password";
+	  }
+  }
+</script>
+
+</body>
+</html>
