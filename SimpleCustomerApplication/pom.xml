@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <checkstyle.home.dir>C:/Jenkins/Utilities/JenkinsPlugin/findbugs/checkstyle-5.6-all/</checkstyle.home.dir>
+    <checkstyle.home.dir>C:/Jenkins/Utilities/JenkinsPlugin/findbugs/checkstyle-5.6-all</checkstyle.home.dir>
  </properties>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.javatpoint</groupId>
@@ -120,7 +120,7 @@
             </transformationSet>
             <transformationSet>
                         <dir>Reports/BuildsStaticCodeAnalysisReport</dir>
-                        <stylesheet>${checkstyle.home.dir}\checkstyle-noframes.xsl</stylesheet>
+                        <stylesheet>${checkstyle.home.dir}/checkstyle-noframes.xsl</stylesheet>
                         <includes>checkstyle_result.xml</includes>
                         <fileMappers>
                             <fileMapper
