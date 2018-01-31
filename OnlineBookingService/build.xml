@@ -27,7 +27,7 @@
     <path id="EAR Libraries.libraryclasspath"/>
 
     <path id="JUnit 4.libraryclasspath">
-                     <path id="master-classpath">                   29
+                     <path id="master-classpath">                   
                        <fileset dir="${lib.dir}">
                          <include name="*.jar"/>
                        </fileset>
