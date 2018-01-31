@@ -163,7 +163,7 @@
 	              	            <classpath refid="OnlineBookingService.classpath"/>
 	              	        </junit>
 	              </target>
-              	    <target name="test" depends="junit">
+              	    <target name="OnlineBookingService" depends="junit">
               	    <mkdir dir="${junit.output.dir}"/>
               	    <junit fork="yes" printsummary="withOutAndErr">
               	         <formatter type="xml"/>
