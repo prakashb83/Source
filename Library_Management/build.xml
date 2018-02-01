@@ -133,14 +133,6 @@
 		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
 		<antcall target="build" />
 	</target>
-	<target name="ValidateTest">
-		<mkdir dir="${junit.output.dir}" />
-		<junit fork="yes" printsummary="withOutAndErr">
-			<formatter type="xml" />
-			<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}" />
-			<classpath refid="Library_Management.classpath" />
-		</junit>
-	</target>
 	<target name="com.librarymanagement.test">
 		<mkdir dir="${junit.output.dir}" />
 		<junit fork="yes" printsummary="withOutAndErr">
@@ -329,29 +321,6 @@
 
 	<target name="cover-test" depends="instrument-classes">
 
-		<junit dir="./" failureproperty="test.failed" printSummary="true">
-
-			<!-- Normally you can create this task by copying your existing JUnit 
-				target, changing its name, and adding these next two lines. You may need 
-				to change the locations to point to wherever you've put the cobertura.jar 
-				file and the instrumented classes. -->
-			<classpath location="${cobertura.dir}/cobertura-1.9.4.1.jar" />
-			<!-- <classpath refid="class.path.cobertura" /> -->
-			<classpath location="${instrumented.dir}" />
-			<classpath>
-				<fileset dir="${lib.dir}">
-					<include name="*.jar" />
-				</fileset>
-				<pathelement path="${test.classes.dir}" />
-
-				<pathelement path="${classes.dir}" />
-			</classpath>
-			<batchtest todir="${test.data.dir}">
-				<fileset dir="${src.dir}">
-					<include name="**/*Tests.java" />
-				</fileset>
-			</batchtest>
-		</junit>
 	</target>
 
 	<!-- -->
