@@ -270,22 +270,37 @@
 		<mkdir dir="${coverage.html.dir}" />
 	</target>
 
-    <target name="compile-test" depends="zipwar">
-                	                  <mkdir dir="${test.dir}"/>
-                	                  <javac srcdir="${test.dir}" destdir="${test.dir}" debug="true" includes="${src.dir}" includeAntRuntime="false">
-                	           <!--    <jvmarg if:set="usesplitverifier" value="-XX:-UseSplitVerifier"/>-->
-                	                  	<classpath refid="master-classpath"/> 
-                	                         <classpath refid="classpath.src"/>
-                	                         <classpath refid="classpath.junittest"/>
-                			                 <classpath refid="class.path.cobertura" />
-                	                         <include name="**/*.java"/>
-                	                  </javac>
-                	                </target>
+               	                <target name="compile-test">
+               	                  <mkdir dir="${test.dir}"/>
+               	                  <javac srcdir="${test.dir}" destdir="${test.dir}" debug="true" includes="${src.dir}" includeAntRuntime="false">
+               	                         <classpath refid="master-classpath"/> 
+               	                         <classpath refid="classpath.src"/>
+               	                         <classpath refid="classpath.junittest"/>
+               			                 <classpath refid="class.path.cobertura" />
+               	                         <include name="**/*.java"/>
+               	                  </javac>
+               	                </target>
 
 	<!-- junit target -->
-	<target name="junit" depends="compile-test">
-	              	               
-	              	                </target>
+	                <target name="junit" depends="compile-test">
+                    <mkdir dir="${test.htmlreports.dir}"/>
+                    <mkdir dir="${test.data.dir}"/>
+                    <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
+                      <test name="${junit.class.name}" todir="${test.data.dir}"/>
+                      <formatter type="brief" usefile="false"/>
+                      <formatter type="xml"/>
+                      <classpath refid="master-classpath" />
+                      <classpath refid="classpath.src" />
+                      <classpath refid="classpath.junittest" />
+                      <classpath refid="classpath.hamcrest" />
+                    </junit>
+                	<junitreport todir="${test.htmlreports.dir}">
+                	                    <fileset dir="${test.data.dir}">
+                	                      <include name="TEST-*.xml"/>
+                	                    </fileset>
+                	                    <report format="frames" todir="${test.htmlreports.dir}"/>
+                	                  </junitreport>
+                </target>
 
 	<!-- cobertura target -->
 
@@ -401,21 +416,16 @@
 
 	<!-- test Target -->
 
-	<target name="test" depends="junit">
-	                    <mkdir dir="${junit.output.dir}"/>
-	                    <junit fork="yes" printsummary="withOutAndErr">
-	                        <formatter type="xml"/>
-	                    	<test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}"/>
-	                    	<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
-	                        <classpath refid="Library_Management.classpath"/>
-	                    </junit>
-	                    <junitreport todir="${test.htmlreports.dir}">
-	              	            <fileset dir="${test.data.dir}">
-	              	              <include name="TEST-*.xml"/>
-	              	            </fileset>
-	              	          <report format="frames" todir="${test.htmlreports.dir}"/>
-	              	    </junitreport>
-	                </target> 
+	              	    <target name="test" depends="junit">
+              	    <mkdir dir="${junit.output.dir}"/>
+              	    <junit fork="yes" printsummary="withOutAndErr">
+              	         <formatter type="xml"/>
+              	         <test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}"/>
+	                 <test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
+              	         <jvmarg line="-ea"/>
+              	         <classpath refid="OnlineBookingService.classpath"/>
+              	    </junit>
+              	    </target>
 	
 	<target name="test-all"
 		depends="initRpt,report-cobertura,report-checkstyle,report-findbugs,junit">
