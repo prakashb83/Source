@@ -3,7 +3,7 @@
 	To include a user specific buildfile here, simply create one in the same 
 	directory with the processing instruction <?eclipse.ant.import?> as the first 
 	entry and export the buildfile again. -->
-<project basedir="." default="getjar" name="Library_Management" xmlns:if="ant:if">
+<project basedir="." default="test" name="Library_Management" xmlns:if="ant:if">
 	<property environment="env" />
 	<property name="ECLIPSE_HOME" value="C:/eclipse" />
 	<property name="junit.output.dir" value="junit" />
@@ -386,7 +386,13 @@
 	<!-- test Target -->
 
 	              	    <target name="test" depends="junit">
-         
+	              	    	<mkdir dir="${junit.output.dir}" />
+	              	    			<junit fork="yes" printsummary="withOutAndErr">
+	              	    				<formatter type="xml" />
+	              	    				<test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}" />
+	              	    				<test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}" />
+	              	    				<classpath refid="Library_Management.classpath" />
+	              	    			</junit>
               	    </target>
 	
 	<target name="test-all"
