@@ -79,7 +79,7 @@ public class Administrator {
     		   libraryBean.setAuthor1("Lynn Beighley");
     		   libraryBean.setPlace1("QA 10.3.s1");
     		   
-    		   libraryBean.setBook2("SQL: QuickStart Guide – The Simplified Beginner's Guide To SQL");
+    		   libraryBean.setBook2("SQL: QuickStart Guide The Simplified Beginners Guide To SQL");
     		   libraryBean.setAuthor2("ClydeBank Technology");
     		   libraryBean.setPlace2("QA 10.3.s2");
     		   
@@ -97,7 +97,7 @@ public class Administrator {
     	   }
     	   
     	   else if(topicname.equals("PHP")) {
-    		   libraryBean.setBook1("The Joy of PHP Programming: A Beginner’s Guide");
+    		   libraryBean.setBook1("The Joy of PHP Programming: A Beginners Guide");
     		   libraryBean.setAuthor1("Alan Forbes");
     		   libraryBean.setPlace1("QA 151.20.p2");
     		   
