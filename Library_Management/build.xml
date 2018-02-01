@@ -189,7 +189,7 @@
 	<property name="test.dir" location="${reports.dir}/BuildsUTCResults/src" />
 	<property name="test.htmlreports.dir" location="${reports.dir}/BuildsUTCResults" />
 	<property name="test.data.dir" location="${reports.dir}/BuildsUTCResults/data" />
-	<property name="junit.class.name" value="com.librarymanageyment.test.AllTests" />
+	<property name="junit.class.name" value="com.librarymanagement.test.Testing" />
 	<property name="test.classes.dir" location="src/com/librarymanageyment/test" />
 
 	<!-- cobertura properties -->
@@ -299,7 +299,7 @@
                 	                      <include name="TEST-*.xml"/>
                 	                    </fileset>
                 	                    <report format="frames" todir="${test.htmlreports.dir}"/>
-                	                  </junitreport>
+                	</junitreport>
                 </target>
 
 	<!-- cobertura target -->
@@ -417,14 +417,7 @@
 	<!-- test Target -->
 
 	              	    <target name="test" depends="junit">
-              	    <mkdir dir="${junit.output.dir}"/>
-              	    <junit fork="yes" printsummary="withOutAndErr">
-              	         <formatter type="xml"/>
-              	         <test name="com.librarymanagement.test.Testing" todir="${junit.output.dir}"/>
-	                 <test name="com.librarymanagement.test.AllTests" todir="${junit.output.dir}"/>
-              	         <jvmarg line="-ea"/>
-              	         <classpath refid="OnlineBookingService.classpath"/>
-              	    </junit>
+         
               	    </target>
 	
 	<target name="test-all"
