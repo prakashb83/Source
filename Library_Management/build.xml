@@ -101,7 +101,7 @@
             <classpath refid="Library_Management.classpath"/>
         </javac>
     </target>
-	<target name="getwar" depends="build">
+	<target name="getwar">
 		    <war destfile="${war.dir}\Library_Management.war"
 	    	webxml = "${web.dir}\WEB-INF\web.xml">    
 	        <fileset dir = "${web.dir}">
