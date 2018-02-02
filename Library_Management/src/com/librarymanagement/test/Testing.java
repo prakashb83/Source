@@ -9,6 +9,7 @@ public class Testing {
 
 	
 	LibraryBean libraryBean=new LibraryBean();
+        String  topic="";
 	String book1="";
     String author1="";
     String place1="";
@@ -25,6 +26,12 @@ public class Testing {
     String author5="";
     String place5="";
 
+     @Test
+    public void testsetTopic() {
+    	topic = "ABC";
+    	libraryBean.setTopic(topic);
+    	Assert.assertEquals(topic,libraryBean.getTopic());
+    }
 
     @Test
     public void testBook1() {
