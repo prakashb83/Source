@@ -50,7 +50,7 @@
     <directory>build/war</directory>
     <defaultGoal>compile</defaultGoal>
     <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>src</testSourceDirectory>
+    <testSourceDirectory>src/com/room/sample/view/Test</testSourceDirectory>
     <outputDirectory>build/war</outputDirectory>
     <finalName>SimpleCustomerApp</finalName>
     <plugins>     
@@ -62,35 +62,32 @@
           <webXml>WebContent\WEB-INF\web.xml</webXml>
         </configuration>
       </plugin>      
-      <!--<plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.2</version>
+        <version>2.5.2</version>
         <configuration>
+		  <outputDirectory>Reports/BuildsCodeCoverage</outputDirectory>
           <formats>         
+            <format>html</format>
             <format>xml</format>
           </formats>
-          --><!--<instrumentation>
+          <instrumentation>
             <excludes>
-              <exclude>**/*Test.java</exclude>
+              <exclude>**/*AllTests.class</exclude>
+              <exclude>**/*CustomerTest.class</exclude>
             </excludes>
-          </instrumentation>--><!--
+          </instrumentation>
         </configuration>
-        --><!--<executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>cobertura</goal>
-            </goals>
-          </execution>
-        </executions>--><!--
-      </plugin>-->
+	  </plugin>        
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>
-          <findbugsXmlOutputDirectory>Reports/SecurityAnalysis</findbugsXmlOutputDirectory>
+          <findbugsXmlOutputDirectory>Reports/SecurityAnalysis</findbugsXmlOutputDirectory>	
+	      <outputDirectory>Reports/BuildsStaticCodeAnalysisReport</outputDirectory>
+		  <outputFile>Reports/SecurityAnalysis/findbugs-default.xml</outputFile>		  
         </configuration>       
       </plugin>
       <plugin>
@@ -104,10 +101,7 @@
               <dir>Reports/SecurityAnalysis</dir>
               <!-- Configures the directory in which the FindBugs report is written.-->
               <outputDir>Reports/SecurityAnalysis</outputDir>
-              <!-- Selects the used stylesheet. -->
-              <!-- <stylesheet>fancy-hist.xsl</stylesheet> -->
-              <!--<stylesheet>default.xsl</stylesheet>-->
-              <!--<stylesheet>plain.xsl</stylesheet>-->
+              <!-- Selects the used stylesheet. -->              
               <stylesheet>fancy.xsl</stylesheet>
               <!--<stylesheet>summary.xsl</stylesheet>-->
               <fileMappers>
@@ -119,16 +113,17 @@
               </fileMappers>
             </transformationSet>
             <transformationSet>
-                        <dir>Reports/BuildsStaticCodeAnalysisReport</dir>
-                        <stylesheet>${checkstyle.home.dir}/checkstyle-noframes.xsl</stylesheet>
-                        <includes>checkstyle_result.xml</includes>
-                        <fileMappers>
-                            <fileMapper
-                                    implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
-                                <pattern>\.xml$</pattern>
-                                <replacement>.html</replacement>
-                            </fileMapper>
-                        </fileMappers>
+                <dir>Reports/BuildsStaticCodeAnalysisReport</dir>
+				<outputDir>Reports/BuildsStaticCodeAnalysisReport</outputDir>
+                <stylesheet>${checkstyle.home.dir}/checkstyle-noframes.xsl</stylesheet>
+                <includes>checkstyle_result.xml</includes>
+					<fileMappers>
+						<fileMapper
+								implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+							<pattern>\.xml$</pattern>
+							<replacement>.html</replacement>
+						</fileMapper>
+					</fileMappers>
             </transformationSet>
           </transformationSets>
         </configuration>
@@ -160,49 +155,29 @@
             <includeTestSourceDirectory>false</includeTestSourceDirectory>
 			<!--<cacheFile>Reports/BuildsStaticCodeAnalysisReport</cacheFile>-->
 			<outputDirectory>Reports/BuildsStaticCodeAnalysisReport</outputDirectory>
-			<!--<outputFile>Reports/BuildsStaticCodeAnalysisReport/checkstyle_result.xml</outputFile>-->
+			<outputFile>Reports/BuildsStaticCodeAnalysisReport/checkstyle_result.xml</outputFile>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.20.1</version>
+			<configuration>
+				<!--<outputFile>Reports/BuildsUTCResults/SimpleCustomerAppTestResults.html</outputFile>-->
+				<outputDirectory>Reports/BuildsUTCResults</outputDirectory>				
+				<outputName>SimpleCustomerAppTestResults</outputName>
+			</configuration>
       </plugin>
-    </plugins>
-  </build>
-  <!--<reporting>
-    <plugins>
-      <plugin>
+	  <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.6</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
+        <artifactId>maven-surefire-plugin</artifactId>
         <version>2.20.1</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.6</version>
         <configuration>
-          <encoding>UTF-8</encoding>
-          <consoleOutput>false</consoleOutput>
-          <failsOnError>false</failsOnError>
-          <includeTestSourceDirectory>false</includeTestSourceDirectory>
+          <includes>
+            <include>**/*AllTests.java</include>
+          </includes>		  	
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.1</version>
-      </plugin>
     </plugins>
-  </reporting>-->
+  </build>  
 </project>
-
-
-
-
-
- 
