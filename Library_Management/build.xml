@@ -3,7 +3,7 @@
 	To include a user specific buildfile here, simply create one in the same 
 	directory with the processing instruction <?eclipse.ant.import?> as the first 
 	entry and export the buildfile again. -->
-<project basedir="." default="test" name="Library_Management" xmlns:if="ant:if">
+<project basedir="." default="cover-test" name="Library_Management" xmlns:if="ant:if">
 	<property environment="env" />
 	<property name="ECLIPSE_HOME" value="C:/eclipse" />
 	<property name="junit.output.dir" value="junit" />
@@ -182,7 +182,7 @@
 	<property name="test.htmlreports.dir" location="${reports.dir}/BuildsUTCResults" />
 	<property name="test.data.dir" location="${reports.dir}/BuildsUTCResults/data" />
 	<property name="junit.class.name" value="com.librarymanagement.test.Testing" />
-	<property name="test.classes.dir" location="src/com/librarymanageyment/test" />
+	<property name="test.classes.dir" location="src/com/librarymanagement/test" />
 
 	<!-- cobertura properties -->
 	<property name="cobertura.dir" value="C:/Jenkins/Utilities/JenkinsPlugin/cobertura/" />
@@ -242,7 +242,7 @@
 		<pathelement path="${cobertura.dir}/lib/oro-2.0.8.jar" />
 		<pathelement location="${cobertura.dir}" />
 	</path>
-	<taskdef classpathref="class.path.cobertura" resource="tasks.properties" />
+	<taskdef resource="tasks.properties" classpathref="class.path.cobertura" />
 
 	<path id="pmd2.classpath">
 		<pathelement location="${build}" />
@@ -258,7 +258,7 @@
 		<mkdir dir="${report.cobertura.dir}" />
 		<mkdir dir="${report.findbugs.dir}" />
 		<mkdir dir="${report.checkstyle.dir}" />
-		<!--<mkdir dir="${coverage.xml.dir}" /> -->
+		<mkdir dir="${coverage.xml.dir}" /> <!-- -->
 		<mkdir dir="${coverage.html.dir}" />
 	</target>
 
@@ -318,9 +318,14 @@
 	</target>
 
 
+    <!--           Normally you can create this task by copying your existing JUnit
+target, changing its name, and adding these next two lines.
+You may need to change the locations to point to wherever 
+you've put the cobertura.jar file and the instrumented classes. -->
 
-	<target name="cover-test" depends="instrument-classes">
 
+	<target name="cover-test" depends="instrument-classes,report-cobertura">
+		
 	</target>
 
 	<!-- -->
