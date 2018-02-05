@@ -79,39 +79,40 @@
             </excludes>
           </instrumentation>
         </configuration>
-	  </plugin>        
+	  </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>
-          <findbugsXmlOutputDirectory>Reports/SecurityAnalysis</findbugsXmlOutputDirectory>	
-	      <outputDirectory>Reports/BuildsStaticCodeAnalysisReport</outputDirectory>
-		  <outputFile>Reports/SecurityAnalysis/findbugs-default.xml</outputFile>		  
-        </configuration>       
+          <findbugsXmlOutputDirectory>Reports/SecurityAnalysis</findbugsXmlOutputDirectory>
+        </configuration> 		
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>xml-maven-plugin</artifactId>
         <version>1.0</version>
         <configuration>
-          <transformationSets>
-            <transformationSet>
-              <!-- Configures the source directory of XML files. -->
-              <dir>Reports/SecurityAnalysis</dir>
-              <!-- Configures the directory in which the FindBugs report is written.-->
-              <outputDir>Reports/SecurityAnalysis</outputDir>
-              <!-- Selects the used stylesheet. -->              
-              <stylesheet>fancy.xsl</stylesheet>
-              <!--<stylesheet>summary.xsl</stylesheet>-->
-              <fileMappers>
-                <!-- Configures the file extension of the output files. -->
-                <fileMapper
-                        implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                  <targetExtension>.html</targetExtension>
-                </fileMapper>
-              </fileMappers>
-            </transformationSet>
+          <transformationSets> 
+			<transformationSet>
+			  <!-- Configures the source directory of XML files. -->
+			  <dir>Reports/SecurityAnalysis</dir>
+			  <!-- Configures the directory in which the FindBugs report is written.-->
+			  <outputDir>Reports/SecurityAnalysis</outputDir>
+			  <stylesheet>fancy.xsl</stylesheet>
+			  <!--<stylesheet>fancy-hist.xsl</stylesheet>-->
+			  <!--<stylesheet>summary.xsl</stylesheet>-->
+			  <!--<stylesheet>default.xsl</stylesheet> -->
+              <!--<stylesheet>plain.xsl</stylesheet>-->
+			  <includes>findbugsXml.xml</includes>
+			  <fileMappers>
+				<!-- Configures the file extension of the output files. -->
+				<fileMapper
+						implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+				  <targetExtension>.html</targetExtension>
+				</fileMapper>				
+			  </fileMappers>
+			</transformationSet>		  
             <transformationSet>
                 <dir>Reports/BuildsStaticCodeAnalysisReport</dir>
 				<outputDir>Reports/BuildsStaticCodeAnalysisReport</outputDir>
@@ -163,7 +164,6 @@
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.20.1</version>
 			<configuration>
-				<!--<outputFile>Reports/BuildsUTCResults/SimpleCustomerAppTestResults.html</outputFile>-->
 				<outputDirectory>Reports/BuildsUTCResults</outputDirectory>				
 				<outputName>SimpleCustomerAppTestResults</outputName>
 			</configuration>
