@@ -6,13 +6,13 @@
   
 <groupId>com.javatpoint</groupId>
   
-<artifactId>Library_Management</artifactId>
+<artifactId>Age_Calculator</artifactId>
   
 <packaging>war</packaging>
   
 <version>x.x-SNAPSHOT</version>
   
-<name>Library_Management</name>
+<name>Age_Calculator</name>
   
 <url>http://maven.apache.org</url>
   
