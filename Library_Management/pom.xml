@@ -12,12 +12,12 @@
       <repository>
          <id>Core-API-Java-Release</id>
          <name>Release repository</name>
-         <url>http://10.148.21.120:9081/repository/AgileHosted/</url>
+         <url>http://10.148.21.28:9081/repository/AgileHosted/</url>
       </repository>
     <snapshotRepository>
       <id>Core-API-Java-Snapshot</id>
       <name>Release repository</name>
-      <url>http://10.148.21.120:9081/repository/AgileHosted/</url>
+      <url>http://10.148.21.28:9081/repository/AgileHosted/</url>
     </snapshotRepository>
    </distributionManagement>
 </project>
