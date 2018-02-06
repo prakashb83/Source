@@ -52,7 +52,7 @@
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>src/com/room/sample/view/Test</testSourceDirectory>
     <outputDirectory>build/war</outputDirectory>
-    <finalName>SimpleCustomerApp</finalName>
+    <finalName>SimpleCustomerApplication</finalName>
     <plugins>     
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
