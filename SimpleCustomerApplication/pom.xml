@@ -117,7 +117,7 @@
                 <dir>Reports/BuildsStaticCodeAnalysisReport</dir>
 				<outputDir>Reports/BuildsStaticCodeAnalysisReport</outputDir>
                 <stylesheet>${checkstyle.home.dir}/checkstyle-noframes.xsl</stylesheet>
-                <includes>checkstyle_result.xml</includes>
+                <includes>checkstyle_report.xml</includes>
 					<fileMappers>
 						<fileMapper
 								implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
@@ -156,7 +156,7 @@
             <includeTestSourceDirectory>false</includeTestSourceDirectory>
 			<!--<cacheFile>Reports/BuildsStaticCodeAnalysisReport</cacheFile>-->
 			<outputDirectory>Reports/BuildsStaticCodeAnalysisReport</outputDirectory>
-			<outputFile>Reports/BuildsStaticCodeAnalysisReport/checkstyle_result.xml</outputFile>
+			<outputFile>Reports/BuildsStaticCodeAnalysisReport/checkstyle_report.xml</outputFile>
         </configuration>
       </plugin>
       <plugin>
@@ -165,7 +165,7 @@
         <version>2.20.1</version>
 			<configuration>
 				<outputDirectory>Reports/BuildsUTCResults</outputDirectory>				
-				<outputName>SimpleCustomerAppTestResults</outputName>
+				<outputName>index</outputName>
 			</configuration>
       </plugin>
 	  <plugin>
