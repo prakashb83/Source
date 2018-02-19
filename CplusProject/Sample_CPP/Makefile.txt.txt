@@ -1,0 +1,45 @@
+#https://www.tutorialspoint.com/unix_commands/gcc.htm
+
+#compiling C programs; default 
+CC = g++
+
+#To compile with some new c++ features 
+CPPSTD=-std=c++11
+
+#Extra flags to give to the C compiler.
+# -Wall enables all the warnings about constructions that some users consider questionable, and that are easy to avoid (or modify to prevent the warning)
+#-g    debugging information,use of extra debugging information that only GDB can use
+# -DLINUX -DSYSTEM_TYPE_LINUX 
+#-fPIC    suitable for dynamic linking and avoiding any limit on the size of the global offset table on target machine .Position-independent code
+CFLAGS = $(CPPSTD) -Wall -g -DLINUX -DSYSTEM_TYPE_LINUX -fPIC 
+
+#rule, take the folollowing list of file name match with it  
+SRCS = $(wildcard ./src/*.cpp)
+
+#.cpp replaced with .o 
+OBJS = $(SRCS:.cpp=.o)
+
+MAIN = libgwacore
+
+#recipe to be executed when you make an explicit request. to avoid a conflict with a file of the same name, and to improve performance.
+.PHONY: clean
+
+all:    $(MAIN)
+	 @echo  
+
+#[-o outfile] infile..
+$(MAIN):$(OBJS) 
+	$(CC) $(CFLAGS)  -o executable $(OBJS) 
+
+#for creating .so  ==> $(CC) $(CFLAGS) $(INCLUDES) -shared -o ../out(MAIN).so.1 $(OBJS) $(LIBS)
+# this is a suffix replacement rule for building .o's from .c's
+# it uses automatic variables $<: the name of the prerequisite of
+# the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
+# (see the gnu make manual section about automatic variables)
+.cpp.o:
+	$(CC) $(CFLAGS) -c $<  -o $@
+
+clean:
+	$(RM) src/*.o *~ ../out/$(MAIN).so.*
+
+
