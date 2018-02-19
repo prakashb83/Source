@@ -27,5 +27,3 @@ $(MAIN):$(OBJS)
 
 clean:
 	$(RM) src/*.o *~ ../out/$(MAIN).so.*
-
-
