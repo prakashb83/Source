@@ -12,6 +12,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\Source-master\Source-master\DotNetProject\HelloCI.Web\bin\HelloCI.Web.dll" target="lib\HelloCI.Web\bin\HelloCI.Web.dll" />
+    <file src="Source\DotNetProject\HelloCI.Web\bin\HelloCI.Web.dll" target="lib\HelloCI.Web\bin\HelloCI.Web.dll" />
   </files>
 </package>
