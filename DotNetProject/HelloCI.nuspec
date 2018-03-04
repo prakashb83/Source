@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>HelloCI.Web</id>
@@ -12,6 +12,24 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="HelloCI.Web\bin\HelloCI.Web.dll" target="lib\HelloCI.Web\bin\HelloCI.Web.dll" />
+    <file src="HelloCI.Web\bin\HelloCI.Web.dll" target="bin\HelloCI.Web.dll" />
+    <file src="HelloCI.Web\Content\Site.css" target="Content\Site.css" />
+    <file src="HelloCI.Web\Scripts\jquery.unobtrusive-ajax.js" target="Scripts\jquery.unobtrusive-ajax.js" />
+    <file src="HelloCI.Web\Scripts\jquery.unobtrusive-ajax.min.js" target="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <file src="HelloCI.Web\Scripts\jquery.validate.unobtrusive.js" target="Scripts\jquery.validate.unobtrusive.js" />
+    <file src="HelloCI.Web\Scripts\jquery.validate.unobtrusive.min.js" target="Scripts\jquery.validate.unobtrusive.min.js" />
+    <file src="HelloCI.Web\Views\Account\ChangePassword.cshtml" target="Views\Account\ChangePassword.cshtml" />
+    <file src="HelloCI.Web\Views\Account\ChangePasswordSuccess.cshtml" target="Views\Account\ChangePasswordSuccess.cshtml" />
+    <file src="HelloCI.Web\Views\Account\LogOn.cshtml" target="Views\Account\LogOn.cshtml" />
+    <file src="HelloCI.Web\Views\Account\Register.cshtml" target="Views\Account\Register.cshtml" />
+    <file src="HelloCI.Web\Views\Home\About.cshtml" target="Views\Home\About.cshtml" />
+    <file src="HelloCI.Web\Views\Home\Index.cshtml" target="Views\Home\Index.cshtml" />
+    <file src="HelloCI.Web\Views\Shared\_Layout.cshtml" target="Views\Shared\_Layout.cshtml" />
+    <file src="HelloCI.Web\Views\Shared\_LogOnPartial.cshtml" target="Views\Shared\_LogOnPartial.cshtml" />
+    <file src="HelloCI.Web\Views\Shared\Error.cshtml" target="Views\Shared\Error.cshtml" />
+    <file src="HelloCI.Web\Views\_ViewStart.cshtml" target="Views\_ViewStart.cshtml" />
+    <file src="HelloCI.Web\Views\Web.config" target="Views\Web.config" />
+    <file src="HelloCI.Web\Global.asax" target="\Global.asax" />
+    <file src="HelloCI.Web\Web.config" target="\Web.config" />
   </files>
 </package>
