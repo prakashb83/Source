@@ -39,7 +39,7 @@ $(document).ready(function(){
             <label for="password">Password:</label>
             <input type="password" name="user_password" maxlength="20" class="required">
             
-            <label for="mobile">Mobile:</label>
+            <label for="mobile">Mobile Number:</label>
             <input type="text" name="mobile" maxlength="10" class="required">
             
             <label for="address">Address:</label>
