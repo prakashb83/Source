@@ -54,7 +54,7 @@ ADD_CUSTOM_TARGET(CodeCoverage
                 COMMAND gcov  test.cpp
 		COMMAND cat   test.cpp.gcov
 		COMMAND lcov --capture --directory . --output-file main.info
-		COMMAND  genhtml main.info --output-directory /home/ansadmin/CodeCoverage/Final_try/Reports/BuildsCodeCoverage
+		COMMAND  genhtml main.info --output-directory Reports/BuildsCodeCoverage
 
 
 )
