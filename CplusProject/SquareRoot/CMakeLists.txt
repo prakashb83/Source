@@ -29,13 +29,13 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Link runTests with what we want to test and the GTest and pthread library
-add_executable(SquareRootPackage/main  src/main.cpp)
-add_executable(UnitTest src/test.cpp)
-target_link_libraries(UnitTest ${GTEST_LIBRARIES} pthread)
+add_executable(SquareRootPackage/executable  src/main.cpp)
+add_executable(UTest src/test.cpp)
+target_link_libraries(UTest ${GTEST_LIBRARIES} pthread)
 file(MAKE_DIRECTORY Reports)
-ADD_CUSTOM_TARGET (UnitTest1 
+ADD_CUSTOM_TARGET (UnitTest 
                 COMMAND  mkdir Reports/BuildsUnittestReport
-		COMMAND ./UnitTest --gtest_output="xml:Reports/BuildsUnittestReport/report.xml"
+		COMMAND ./UTest --gtest_output="xml:Reports/BuildsUnittestReport/report.xml"
 )
          
 
@@ -49,8 +49,8 @@ ADD_CUSTOM_TARGET(CodeAnalysis
 )
 ADD_CUSTOM_TARGET(CodeCoverage
                 COMMAND  mkdir Reports/BuildsCodeCoverage
-                COMMAND g++ -o utest -fprofile-arcs -ftest-coverage src/test.cpp -L /usr/lib  -I/usr/include -lgtest -lgtest_main
-                COMMAND   ./utest 
+                COMMAND g++ -o CCtest -fprofile-arcs -ftest-coverage src/test.cpp -L /usr/lib  -I/usr/include -lgtest -lgtest_main
+                COMMAND   ./CCtest 
                 COMMAND gcov  test.cpp
 		COMMAND cat   test.cpp.gcov
 		COMMAND lcov --capture --directory . --output-file main.info
