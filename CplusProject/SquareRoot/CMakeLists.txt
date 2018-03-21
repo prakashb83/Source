@@ -34,15 +34,18 @@ add_executable(UTest src/test.cpp)
 target_link_libraries(UTest ${GTEST_LIBRARIES} pthread)
 file(MAKE_DIRECTORY Reports)
 ADD_CUSTOM_TARGET (UnitTest 
-                COMMAND  mkdir Reports/BuildsUnittestReport
-		COMMAND ./UTest --gtest_output="xml:Reports/BuildsUnittestReport/report.xml"
+                COMMAND  mkdir Reports/BuildsUTCResults
+		COMMAND ./UTest --gtest_output="xml:Reports/BuildsUTCResults/report.xml"
+                COMMAND  ./CPPTestReportsToHtml/scripts/htmlgen.py "Reports/BuildsUTCResults/SquareRootResults.html" "Reports/BuildsUTCResults/report.xml"
+                COMMAND cp CPPTestReportsToHtml/html_resources/*.* Reports/BuildsUTCResults
 )
          
 
 ADD_CUSTOM_TARGET(CodeAnalysis
                  COMMAND  mkdir Reports/BuildsStaticCodeAnalysisReport
                  COMMAND  cppcheck --xml --xml-version=2 --check-config --check-library --enable=style,all,warning --report-progress    src/*.cpp  2>cppcheck.xml
-                  COMMAND cppcheck-htmlreport --file=cppcheck.xml --report-dir=Reports/BuildsStaticCodeAnalysisReport  --source-dir=.
+                  COMMAND cppcheck-htmlreport --file=cppcheck.xml --report-dir=Reports/BuildsStaticCodeAnalysisReport --source-dir=.
+                  COMMAND mv Reports/BuildsStaticCodeAnalysisReport/index.html Reports/BuildsStaticCodeAnalysisReport/checkstyle_report.html
 
  
 
@@ -58,4 +61,3 @@ ADD_CUSTOM_TARGET(CodeCoverage
 
 
 )
-
