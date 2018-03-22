@@ -38,7 +38,7 @@ ADD_CUSTOM_TARGET (UnitTest
 		COMMAND ./UTest --gtest_output="xml:Reports/BuildsUTCResults/report.xml"
                 COMMAND chmod 777 CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py
                 COMMAND chmod 777 CPPTestReportsToHtml/scripts/traverseCollection.py
-                COMMAND  ./CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py  "Reports/BuildsUTCResults/SquareRootResults.html" "Reports/BuildsUTCResults/report.xml"
+                COMMAND  ./CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py  "Reports/BuildsUTCResults/index.html" "Reports/BuildsUTCResults/report.xml"
                 COMMAND cp CPPTestReportsToHtml/html_resources/*.* Reports/BuildsUTCResults
 )
          
