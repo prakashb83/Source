@@ -1,6 +1,6 @@
 #include <math.h>
 double squareRoot(const double a) {
-    int a;
+    int a1;
     char b1;
     float h;
     double b = sqrt(a);
