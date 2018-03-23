@@ -47,8 +47,8 @@ ADD_CUSTOM_TARGET(CodeAnalysis
                  COMMAND  mkdir Reports/BuildsStaticCodeAnalysisReport
                  COMMAND  cppcheck --enable=all --inconclusive --xml-version=2  src  ./ 2> ./cppcheck.xml
                  COMMAND cppcheck-htmlreport --file=cppcheck.xml --report-dir=Reports/BuildsStaticCodeAnalysisReport --source-dir=.
-                 COMMAND touch  Reports/BuildsStaticCodeAnalysisReport/checkstyle_report.html
-		 COMMAND cp  Reports/BuildsStaticCodeAnalysisReport/index.html Reports/BuildsStaticCodeAnalysisReport/checkstyle_report.html
+                 COMMAND touch  Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
+		 COMMAND cp  Reports/BuildsStaticCodeAnalysisReport/index.html Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
 
 
  
