@@ -248,7 +248,7 @@
               <mkdir dir="${coverage.html.dir}" />
             </target>
               	
-                <target name="compile-test" depends="zipwar">
+                <target name="compile-test" depends="build">
                   <mkdir dir="${test.dir}"/>
                   <javac srcdir="${test.dir}" destdir="${test.dir}" debug="true" includes="${src.dir}" includeAntRuntime="false">
          	    <jvmarg if:set="usesplitverifier" value="-XX:-UseSplitVerifier" />
