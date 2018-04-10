@@ -4,7 +4,7 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project basedir="." default="zipwar" name="SimpleCustomerApp" xmlns:if="ant:if">
+<project basedir="." default="build" name="SimpleCustomerApp" xmlns:if="ant:if">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="C:/eclipse"/>
     <property name="junit.output.dir" value="junit"/>
