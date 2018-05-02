@@ -1,0 +1,30 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {        
+        "adminUsername": {
+            "value": "lbgadmin"
+        },
+        "adminPassword": {
+            "value": "Password@2017"
+        },
+        "dnsLabelPrefix": {
+            "value": "lbgdevjenkins"
+        },
+        "vmName": {
+            "value": "lbgdevjenkins"
+        },
+        "nicName": {
+            "value": "lbgjenkinsVMNic"
+        },
+        "virtualNetworkName": {
+            "value": "lbgjenkinsVNET"
+        },
+        "publicIPAddressName": {
+            "value": "mylbgjenkinsPublicIP"
+        },
+        "subnetName": {
+            "value": "lbgjenkinsSubnet"
+        }
+   }
+}
