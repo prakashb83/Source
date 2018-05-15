@@ -4,7 +4,7 @@ CFLAGS=-c -Wall
 # Standard all target
 all: Squareroot
 
-Squareroot : main.o Squarerootfunc.o test.o
+Squareroot : Squarerootfunc.o test.o main.o
 
 main.o: main.cpp
 	  $(CC) $(CFLAGS) main.cpp
