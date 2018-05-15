@@ -6,13 +6,13 @@ all: Squareroot
 
 Squareroot : Squarerootfunc.o test.o main.o
 
-main.o: main.cpp
+main.o: src/main.cpp
 	  $(CC) $(CFLAGS) src/main.cpp
 	  
-Squarerootfunc.o: Squarerootfunc.cpp
+Squarerootfunc.o: src/Squarerootfunc.cpp
 	  $(CC) $(CFLAGS) src/Squarerootfunc.cpp
 	 
-test.o: test.cpp
+test.o: src/test.cpp
 	  $(CC) $(CFLAGS) src/test.cpp
 	  
 #clean: 
