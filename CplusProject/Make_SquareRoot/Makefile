@@ -8,7 +8,7 @@ OBJS = $(SRCS:.cpp=.o)
 # Standard all target
 all: Squareroot
 
-Squareroot : Squarerootfunc.o test.o main.o execute testexecute
+Squareroot : Squarerootfunc.o test.o main.o execute
 
 main.o: src/main.cpp
 	  $(CC) $(CFLAGS) src/main.cpp
