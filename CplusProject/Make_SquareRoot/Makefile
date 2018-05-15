@@ -17,10 +17,10 @@ Squarerootfunc.o: src/Squarerootfunc.cpp
 	  $(CC) $(CFLAGS) src/Squarerootfunc.cpp
 	 
 test.o: src/test.cpp
-	  $(CC) $(CFLAG) src/test.cpp
+	  $(CC) $(CFLAGS) src/test.cpp
 
 execute: main.o
-	$(CC) $(CFLAGS)  -o executable main.o 
+	$(CC) $(CFLAG)  -o executable main.o 
 
 #clean: 
 #	rm -rf *o Squareroot
