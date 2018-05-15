@@ -20,7 +20,7 @@ test.o: src/test.cpp
 	  $(CC) $(CFLAG) src/test.cpp
 
 execute: main.o
-	$(CC) $(CFLAGS)  -o executable $(OBJS) 
+	$(CC) $(CFLAGS)  -o executable main.o 
 
 #clean: 
 #	rm -rf *o Squareroot
