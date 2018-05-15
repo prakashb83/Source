@@ -22,8 +22,8 @@ test.o: src/test.cpp
 execute: main.o
 	$(CC) $(CFLAG)  -o SquareRootPackage/executable main.o 
 	
-testexecute: test.o
-	$(CC) $(CFLAG)  -o Utest test.o 
+#testexecute: test.o
+#	$(CC) $(CFLAG)  -o Utest test.o 
 
 #clean: 
 #	rm -rf *o Squareroot
