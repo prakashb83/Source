@@ -20,7 +20,18 @@ test.o: src/test.cpp
 	  $(CC) $(CFLAGS) src/test.cpp
 
 execute: main.o
-	$(CC) $(CFLAG)  -o SquareRootPackage/executable main.o 
+	$(CC) $(CFLAG)  -o SquareRootPackage/executable main.o
+	
+.PHONY: CodeAnalysis
+	
+CodeAnalysis:
+	mkdir Reports
+        mkdir Reports/BuildsStaticCodeAnalysisReport
+	cppcheck --enable=all --inconclusive --xml-version=2  src  ./ 2> ./cppcheck.xml
+	cppcheck-htmlreport --file=cppcheck.xml --report-dir=Reports/BuildsStaticCodeAnalysisReport --source-dir=.
+	cp cppcheck.xml Reports/BuildsStaticCodeAnalysisReport
+	touch  Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
+	cp  Reports/BuildsStaticCodeAnalysisReport/index.html Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
 	
 #testexecute: test.o
 #	$(CC) $(CFLAG)  -o Utest test.o 
