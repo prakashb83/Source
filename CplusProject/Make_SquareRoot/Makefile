@@ -26,7 +26,7 @@ execute: main.o
 	
 CodeAnalysis:
 	mkdir Reports
-        mkdir Reports/BuildsStaticCodeAnalysisReport
+	mkdir Reports/BuildsStaticCodeAnalysisReport
 	cppcheck --enable=all --inconclusive --xml-version=2  src  ./ 2> ./cppcheck.xml
 	cppcheck-htmlreport --file=cppcheck.xml --report-dir=Reports/BuildsStaticCodeAnalysisReport --source-dir=.
 	cp cppcheck.xml Reports/BuildsStaticCodeAnalysisReport
