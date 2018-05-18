@@ -26,7 +26,7 @@ execute: main.o
 	$(CC) $(CFLAG)  -o SquareRootPackage/executable main.o
 	
 testexecute: test.o
-	$(CC) $(CFLAG)  -o Utest test.o $(LDFLAGS)
+	$(CC) $(CFLAG)  -o UTest test.o $(LDFLAGS)
 
 .PHONY: CodeAnalysis
 
