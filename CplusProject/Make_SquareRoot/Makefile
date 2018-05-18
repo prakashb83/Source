@@ -51,9 +51,9 @@ UnitTest:
 	
 CodeCoverage:
 	mkdir Reports/BuildsCodeCoverage
-        g++ -o CCtest -fprofile-arcs -ftest-coverage src/test.cpp -L /usr/lib  -I/usr/include -lgtest -lgtest_main
-	./CCtest 
-        gcov  test.cpp
+	g++ -o CCtest -fprofile-arcs -ftest-coverage src/test.cpp -L /usr/lib  -I/usr/include -lgtest -lgtest_main
+	./CCtest
+	gcov  test.cpp
 	cat   test.cpp.gcov
 	lcov --capture --directory . --output-file main.info
 	genhtml main.info --output-directory Reports/BuildsCodeCoverage
