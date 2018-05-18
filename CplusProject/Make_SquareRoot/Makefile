@@ -30,7 +30,7 @@ testexecute: test.o
 
 .PHONY: CodeAnalysis
 
-.PHONY: UnitTest
+.PHONY: UnitTest CodeCoverage
 	
 CodeAnalysis:
 	mkdir Reports/BuildsStaticCodeAnalysisReport
@@ -48,6 +48,15 @@ UnitTest:
 	chmod 777 CPPTestReportsToHtml/scripts/traverseCollection.py
 	./CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py  "Reports/BuildsUTCResults/index.html" "Reports/BuildsUTCResults/report.xml"
 	cp CPPTestReportsToHtml/html_resources/*.* Reports/BuildsUTCResults
+	
+CodeCoverage:
+	mkdir Reports/BuildsCodeCoverage
+        g++ -o CCtest -fprofile-arcs -ftest-coverage src/test.cpp -L /usr/lib  -I/usr/include -lgtest -lgtest_main
+	./CCtest 
+        gcov  test.cpp
+	cat   test.cpp.gcov
+	lcov --capture --directory . --output-file main.info
+	genhtml main.info --output-directory Reports/BuildsCodeCoverage
 	
  
 
