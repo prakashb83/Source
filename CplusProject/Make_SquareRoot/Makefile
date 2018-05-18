@@ -8,7 +8,7 @@ OBJS = $(SRCS:.cpp=.o)
 # Standard all target
 all: Squareroot
 
-Squareroot : Squarerootfunc.o test.o main.o execute
+Squareroot : Squarerootfunc.o test.o main.o execute testexecute
 
 main.o: src/main.cpp
 	  $(CC) $(CFLAGS) src/main.cpp
@@ -22,6 +22,9 @@ test.o: src/test.cpp
 execute: main.o
 	$(CC) $(CFLAG)  -o SquareRootPackage/executable main.o
 	
+testexecute: test.o
+	$(CC) $(CFLAG)  -o Utest test.o
+
 .PHONY: CodeAnalysis
 	
 CodeAnalysis:
@@ -33,8 +36,7 @@ CodeAnalysis:
 	touch  Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
 	cp  Reports/BuildsStaticCodeAnalysisReport/index.html Reports/BuildsStaticCodeAnalysisReport/CodeAnalysisReport.html
 	
-#testexecute: test.o
-#	$(CC) $(CFLAG)  -o Utest test.o 
+ 
 
 #clean: 
 #	rm -rf *o Squareroot
