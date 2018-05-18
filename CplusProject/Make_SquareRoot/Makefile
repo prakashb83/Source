@@ -44,10 +44,10 @@ UnitTest:
 	mkdir Reports
 	mkdir Reports/BuildsUTCResults
 	./UTest --gtest_output="xml:Reports/BuildsUTCResults/report.xml"
-        chmod 777 CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py
-        chmod 777 CPPTestReportsToHtml/scripts/traverseCollection.py
-        ./CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py  "Reports/BuildsUTCResults/index.html" "Reports/BuildsUTCResults/report.xml"
-        cp CPPTestReportsToHtml/html_resources/*.* Reports/BuildsUTCResults
+	chmod 777 CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py
+	chmod 777 CPPTestReportsToHtml/scripts/traverseCollection.py
+	./CPPTestReportsToHtml/scripts/genHtmlReportFromGtest.py  "Reports/BuildsUTCResults/index.html" "Reports/BuildsUTCResults/report.xml"
+	cp CPPTestReportsToHtml/html_resources/*.* Reports/BuildsUTCResults
 	
  
 
