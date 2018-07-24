@@ -1,0 +1,7 @@
+{
+    "Memory Usage" : "2721/6922MB", 
+    "Disk Usage" : "25G/452GB", 
+    "Memory Usage%" : "39.6128%", 
+    "Disk Usage%" : "6%", 
+    "CPU Relative Load%" : "164%" 
+}
