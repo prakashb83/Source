@@ -1,1 +1,0 @@
-pyton sample project for WID
