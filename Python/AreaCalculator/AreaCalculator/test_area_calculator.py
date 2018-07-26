@@ -27,6 +27,6 @@ class TestCalc(unittest.TestCase):
        self.assertAlmostEqual(self.a1.circle(5), pi*5**2)	   
 	   
 if __name__ == '__main__':
-	unittest.main(testRunner=HTMLTestRunner(output='Area'))
+	unittest.main(testRunner=HTMLTestRunner(output='UnitTest'))
 	#unittest.main(testRunner=xmlrunner.XMLTestRunner(output='UnitTest'))
 	
