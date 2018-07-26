@@ -28,5 +28,5 @@ class TestCalc(unittest.TestCase):
 	   
 if __name__ == '__main__':
 	unittest.main(testRunner=HTMLTestRunner(output='Area'))
-	#unittest.main(testRunner=xmlrunner.XMLTestRunner(output='Area'))
+	#unittest.main(testRunner=xmlrunner.XMLTestRunner(output='UnitTest'))
 	
