@@ -1,9 +1,15 @@
 @ECHO off    
+if /I %1 == compile goto :compile
 if /I %1 == unittest goto :unittest
 if /I %1 == codecoverage goto :codecoverage
 if /I %1 == codeanalysis goto :codeanalysis
 if /I %1 == securityanalysis goto :securityanalysis
 if /I %1 == sonar goto :sonar
+
+
+:compile
+python -m compileall -l %2
+goto :eof
 
 :unittest
 python AreaCalculator\test_area_calculator.py
