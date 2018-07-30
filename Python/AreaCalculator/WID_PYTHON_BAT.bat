@@ -20,14 +20,14 @@ pylint AreaCalculator\test_area_calculator.py --output-format=json > %2\test_are
 cd %2
 pylint-json2html -o area_calculator_ca.html area_calculator_ca.json
 pylint-json2html -o test_area_calculator_ca.html test_area_calculator_ca.json
-copy /b *.html codeanalysis.html
+copy /b *.html CodeAnalysisReport.html
 goto :eof
 
 :securityanalysis
 bandit AreaCalculator\area_calculator.py -f html> %2\area_calculator_sa.html
 bandit AreaCalculator\test_area_calculator.py -f html > %2\test_area_calculator_sa.html
 cd %2
-copy /b *.html securityanalysis.html
+copy /b *.html Report.html
 goto :eof
 
 :sonar 
