@@ -3,7 +3,7 @@ if /I %1 == unittest goto :unittest
 if /I %1 == codecoverage goto :codecoverage
 if /I %1 == codeanalysis goto :codeanalysis
 if /I %1 == securityanalysis goto :securityanalysis
-
+if /I %1 == sonar goto :sonar
 
 :unittest
 python AreaCalculator\test_area_calculator.py
@@ -30,6 +30,13 @@ cd %2
 copy /b *.html securityanalysis.html
 goto :eof
 
-
+:sonar 
+cd %2
+xcopy  %2\sonar-project.properties %2\%3
+cd %3
+nosetests --with-xunit
+coverage run test_area_calculator.py
+coverage xml
+goto :eof 
 
 
