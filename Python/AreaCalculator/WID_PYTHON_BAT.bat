@@ -40,7 +40,11 @@ goto :eof
 cd %2
 xcopy  %2\sonar-project.properties %2\%3
 cd %3
+mkdir init
+move __init__.py init
 nosetests --with-xunit
+xcopy init  %2\%3
+RD /S /Q init
 coverage run test_area_calculator.py
 coverage xml
 goto :eof 
