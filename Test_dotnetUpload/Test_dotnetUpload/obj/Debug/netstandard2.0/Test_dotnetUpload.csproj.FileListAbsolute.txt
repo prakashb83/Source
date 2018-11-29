@@ -1,8 +1,0 @@
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\bin\Debug\netstandard2.0\Test_dotnetUpload.deps.json
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\bin\Debug\netstandard2.0\Test_dotnetUpload.dll
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\bin\Debug\netstandard2.0\Test_dotnetUpload.pdb
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\obj\Debug\netstandard2.0\Test_dotnetUpload.csproj.CoreCompileInputs.cache
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\obj\Debug\netstandard2.0\Test_dotnetUpload.AssemblyInfoInputs.cache
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\obj\Debug\netstandard2.0\Test_dotnetUpload.AssemblyInfo.cs
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\obj\Debug\netstandard2.0\Test_dotnetUpload.dll
-C:\Users\d6000831\source\repos\Test_dotnetUpload\Test_dotnetUpload\obj\Debug\netstandard2.0\Test_dotnetUpload.pdb

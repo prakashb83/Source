@@ -1,9 +1,0 @@
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\Tests.dll
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\Tests.pdb
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\nunit.framework.dll
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\Xamarin.UITest.dll
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\nunit.framework.xml
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\bin\Debug\Xamarin.UITest.xml
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\obj\Debug\Tests.dll
-c:\Users\wiproat3.pheonix\documents\visual studio 2015\Projects\my_app\Tests\obj\Debug\Tests.pdb
