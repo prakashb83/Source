@@ -1,4 +1,0 @@
-HelloApp.MainActivity, HelloApp;md535cbefe6605e09ba479f7ccdc7dc7364.MainActivity
-HelloApp.MainActivity, HelloApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md535cbefe6605e09ba479f7ccdc7dc7364.MainActivity
-HelloApp.MainActivity;md535cbefe6605e09ba479f7ccdc7dc7364.MainActivity
-helloapp.MainActivity;md535cbefe6605e09ba479f7ccdc7dc7364.MainActivity
