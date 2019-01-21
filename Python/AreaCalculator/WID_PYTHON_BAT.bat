@@ -8,11 +8,11 @@ if /I %1 == sonar goto :sonar
 
 
 :compile
-py -m compileall -l %2
+python -m compileall -l %2
 goto :eof
 
 :unittest
-py AreaCalculator\test_area_calculator.py
+python AreaCalculator\test_area_calculator.py
 goto :eof
 
 :codecoverage
